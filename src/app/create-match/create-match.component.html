@@ -1,0 +1,41 @@
+<mat-card class="example-card">
+    <mat-card-header>
+    <h3> Enter team names to COMPETE!</h3> 
+    </mat-card-header>
+    
+    <mat-card-content>
+   
+
+        <form novalidate (ngSubmit)="onSubmit()" #loginform="ngForm">
+                <p>
+                    <mat-form-field>
+                        <input matInput placeholder="Team 1" [(ngModel)]="data.team_name1" name="team_name1" #team_names1="ngModel" required>
+                        <mat-error *ngIf="team_names1.errors?.required">Team Name 1 is required</mat-error>
+                    </mat-form-field>
+                </p>
+                <p>
+                    <mat-form-field>
+                        <input matInput placeholder="Team 2" [(ngModel)]="data.team_name2" name="team_name2" #team_names2="ngModel" required>
+                        <mat-error *ngIf="team_names2.errors?.required">Team Name 2 is required</mat-error>
+                    </mat-form-field>
+                </p>
+                <p>
+                    <mat-form-field>
+                       
+                            <mat-label>Select</mat-label>
+                            <mat-select  matInput placeholder="Result" [(ngModel)]="data.result" name="result" #res="ngModel" required>
+                              <mat-option value="1">Team 1 won!!</mat-option>
+                              <mat-option value="2">Team 2 won!!</mat-option>
+                              <mat-option value="0">It's a Tie!!</mat-option>
+                            </mat-select>
+                        
+                        <mat-error *ngIf="res.errors?.required">Result required</mat-error>
+                    </mat-form-field>
+                </p>
+                <button mat-button type="submit"  [disabled]="loginform.form.invalid">Results</button>
+                <h4>{{this.error}}</h4>
+        </form>
+     
+  </mat-card-content>
+    
+</mat-card>

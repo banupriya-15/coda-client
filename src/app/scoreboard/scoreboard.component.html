@@ -1,0 +1,23 @@
+
+ <p class="sort-by">
+ <mat-select matInput placeholder="Sort By" [(ngModel)]="sort" (selectionChange)="onChange($event)">
+   <mat-option value="name" >Name</mat-option>
+   <mat-option value="score">Score</mat-option>
+ </mat-select>
+</p>
+
+<!-- <p class="search">
+  <mat-search-bar [(ngModel)]="searchString" (onEnter)="search($event)"></mat-search-bar>
+ </p>
+  -->
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <ng-container [matColumnDef]="column" *ngFor="let column of displayedColumns">
+    <th mat-header-cell *matHeaderCellDef> {{column}} </th>
+    <td mat-cell *matCellDef="let element"> {{element[column]}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+  <tr mat-row *matRowDef="let row; columns: columnsToDisplay;"></tr>
+</table>
+
+<mat-paginator [pageSizeOptions]="[5,10,20]"  showFirstLastButtons></mat-paginator>

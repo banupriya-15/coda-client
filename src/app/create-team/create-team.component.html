@@ -1,0 +1,23 @@
+<mat-card class="example-card">
+    <mat-card-header>
+     Create a team
+    </mat-card-header>
+    
+    <mat-card-content>
+   
+
+        <form novalidate (ngSubmit)="onSubmit()" #loginform="ngForm">
+                <p>
+                    <mat-form-field>
+                        <input matInput placeholder="Caption" [(ngModel)]="team_name" name="team_name" #team_names="ngModel" required>
+                        <mat-error *ngIf="team_names.errors?.required">Team Name is required</mat-error>
+                    </mat-form-field>
+                </p>
+                <button mat-button type="submit" class="background-primary text-floral-white" [disabled]="loginform.form.invalid">Create Team</button>
+                <h4>{{err}}</h4>
+            </form>
+     
+  </mat-card-content>
+    
+</mat-card>
+  
