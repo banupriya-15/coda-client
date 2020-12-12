@@ -23,7 +23,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { NgMatSearchBarModule } from 'ng-mat-search-bar';
 import { SearchComponent } from './search/search.component';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
-
+import {MatTooltipModule} from '@angular/material/tooltip';
 const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
 
 @NgModule({
@@ -52,6 +52,7 @@ const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
    SocketIoModule.forRoot(config),
    NgMatSearchBarModule,
    MatPaginatorModule,
+   MatTooltipModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

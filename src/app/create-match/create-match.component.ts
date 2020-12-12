@@ -30,7 +30,7 @@ export class CreateMatchComponent implements OnInit {
   onSubmit(){
     
     if(this.data.team_name1 === this.data.team_name2){
-             this.error ="Same teams cannot compete! Select differnt opponent";
+             this.error ="Same teams cannot compete! Select different opponent";
              console.log(this.error);
              return this.error;
     }

@@ -9,7 +9,16 @@ mat-toolbar
    
 }
 
+
+button{
+    outline:none; 
+  }
+
 img{
     height: 5px;
     width: 5px;
+}
+
+.hack{
+    border: none;
 }

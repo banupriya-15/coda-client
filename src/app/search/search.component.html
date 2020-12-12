@@ -1,5 +1,5 @@
  <p class="search">
-  <mat-search-bar (onEnter)="search($event)"></mat-search-bar>
+  <mat-search-bar  matTooltip="Search here"   placeholder = "Enter Team name or Score" (onEnter)="search($event)" ></mat-search-bar>
  </p>
 
  <table *ngIf="searchTeams" mat-table [dataSource]="searchTeams" class="mat-elevation-z8">
